@@ -68,7 +68,7 @@ const Index = () => {
               <Button
                 onClick={() => setShowCreditModal(true)}
                 variant="outline"
-                className="rounded-2xl border-white/30 text-white hover:bg-white/10"
+                className="rounded-2xl border-white/30 text-primary hover:bg-white/10"
               >
                 Credit Score
               </Button>
