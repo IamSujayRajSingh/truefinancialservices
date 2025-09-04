@@ -8,13 +8,14 @@
 
 @layer base {
   :root {
-    /* TFS Brand Colors - Yellow & Black Theme */
+    /* TFS Gradient Colors - Yellow & Black Theme */
     --primary-yellow: 60 100% 50%;
-    --accent-gold: 45 100% 35%;
-    --neutral-black: 0 0% 8%;
-    --neutral-gray: 0 0% 25%;
+    --primary-gold: 45 100% 45%;
+    --accent-amber: 35 100% 55%;
+    --neutral-black: 0 0% 0%;
+    --neutral-charcoal: 0 0% 8%;
     
-    /* Semantic Design System */
+    /* Semantic Design System with Gradients */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
@@ -36,8 +37,8 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 45 100% 35%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 45%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -46,12 +47,17 @@
     --input: 0 0% 15%;
     --ring: 60 100% 50%;
     
-    /* Custom Properties */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+    /* Custom Gradient Properties */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-yellow)), hsl(var(--primary-gold)), hsl(var(--neutral-black)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--neutral-charcoal)), hsl(var(--neutral-black)));
+    --gradient-primary: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--accent-amber)), hsl(var(--primary-gold)));
+    --gradient-background: radial-gradient(circle at 50% 0%, hsl(var(--primary-yellow) / 0.1), transparent 70%), linear-gradient(180deg, hsl(var(--neutral-black)), hsl(var(--neutral-charcoal)));
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.3);
     --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.4);
     --shadow-floating: 0 12px 40px -12px hsl(var(--primary) / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.4);
 
     --radius: 0.5rem;
 
@@ -111,7 +117,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply font-inter text-foreground;
+    background: var(--gradient-background);
   }
 }
 
@@ -125,6 +132,22 @@
     background: var(--gradient-hero);
   }
   
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -135,5 +158,34 @@
   
   .shadow-floating {
     box-shadow: var(--shadow-floating);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient Borders */
+  .gradient-border {
+    position: relative;
+    background: var(--gradient-card);
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
   }
 }
