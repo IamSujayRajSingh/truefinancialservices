@@ -55,10 +55,9 @@ const Index = () => {
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-12 w-auto" />
-              
-            </div>
+            </Link>
             
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/services/used-car-loan" className="text-white/90 hover:text-white">
@@ -167,10 +166,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
+              <Link to="/" className="flex items-center space-x-3">
                 <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-10 w-auto" />
                 <span className="text-2xl font-bold">TFS</span>
-              </div>
+              </Link>
               <p className="text-white/80">
                 Fast, transparent used-car loans with instant pre-approval and low EMIs.
               </p>
@@ -190,7 +189,7 @@ const Index = () => {
               <ul className="space-y-2 text-white/80">
                 <li><Link to="/about" className="hover:text-white">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+                <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>
             
