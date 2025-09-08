@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,32 +16,32 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   useEffect(() => {
     document.title = "Contact TFS | Used Car Loan Experts";
   }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     toast({
       title: "Message Sent!",
-      description: "Thanks! Our team will contact you soon.",
+      description: "Thanks! Our team will contact you soon."
     });
-    
     setFormData({
       name: "",
       email: "",
@@ -51,9 +50,7 @@ const Contact = () => {
     });
     setIsSubmitting(false);
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <nav className="container mx-auto px-4 py-6">
@@ -85,12 +82,15 @@ const Contact = () => {
       </header>
 
       {/* Hero */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="py-20 bg-gradient-to-r from-trust-blue to-accent-green text-white"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 20
+    }} animate={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} className="py-20 bg-gradient-to-r from-trust-blue to-accent-green text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">We're here to help you.</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
@@ -104,71 +104,41 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: -20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} transition={{
+            duration: 0.6
+          }} viewport={{
+            once: true
+          }}>
               <Card className="p-8 shadow-card rounded-2xl">
                 <h2 className="text-3xl font-bold text-primary mb-6">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="rounded-xl"
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="rounded-xl" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="rounded-xl"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="rounded-xl" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="rounded-xl"
-                    />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} required className="rounded-xl" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      className="rounded-xl"
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="rounded-xl" />
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    className="w-full rounded-2xl py-6 text-lg"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" className="w-full rounded-2xl py-6 text-lg" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
@@ -176,13 +146,17 @@ const Contact = () => {
             </motion.div>
 
             {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            x: 20
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} transition={{
+            duration: 0.6
+          }} viewport={{
+            once: true
+          }} className="space-y-8">
               <div>
                 <h2 className="text-3xl font-bold text-primary mb-6">Get in Touch</h2>
                 <p className="text-lg text-muted-foreground mb-8">
@@ -199,8 +173,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">Call Us</h3>
                       <p className="text-muted-foreground mb-2">Mon-Sat: 9:00 AM - 6:00 PM</p>
-                      <a href="tel:+91-8505830148" className="text-xl font-semibold text-primary hover:underline">
-                        +91-8505830148
+                      <a href="tel:1800-123-4567" className="text-xl font-semibold text-primary hover:underline">
+                        1800-123-4567
                       </a>
                     </div>
                   </div>
@@ -214,11 +188,9 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">WhatsApp</h3>
                       <p className="text-muted-foreground mb-2">Quick support via chat</p>
-                      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="rounded-2xl border-accent-green text-accent-green hover:bg-accent-green hover:text-white">
-                          Start WhatsApp Chat
-                        </Button>
-                      </a>
+                      <Button variant="outline" className="rounded-2xl border-accent-green text-accent-green hover:bg-accent-green hover:text-white">
+                        Start WhatsApp Chat
+                      </Button>
                     </div>
                   </div>
                 </Card>
@@ -247,8 +219,8 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-primary mb-2">Office Address</h3>
                       <p className="text-muted-foreground">
                         TFS Corporate Office<br />
-                        487/104, Peeragarhi<br />
-                        New Delhi<br />
+                        123 Business District<br />
+                        Mumbai, Maharashtra 400001<br />
                         India
                       </p>
                     </div>
@@ -259,10 +231,7 @@ const Contact = () => {
               {/* Map Placeholder */}
               <Card className="p-6 shadow-card rounded-2xl">
                 <div className="w-full h-64 bg-neutral-gray rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-muted-foreground">Interactive Map Coming Soon</p>
-                  </div>
+                  
                 </div>
               </Card>
             </motion.div>
@@ -304,7 +273,7 @@ const Contact = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">+91-8505830148</p>
+                <p className="text-white/80">1800-123-4567</p>
                 <p className="text-white/80">support@tfs.com</p>
               </div>
             </div>
@@ -317,13 +286,9 @@ const Contact = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
-          <MessageCircle className="h-6 w-6" />
-        </Button>
-      </a>
-    </div>
-  );
+      <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
+        <MessageCircle className="h-6 w-6" />
+      </Button>
+    </div>;
 };
-
 export default Contact;
