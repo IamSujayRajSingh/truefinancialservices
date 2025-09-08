@@ -47,9 +47,23 @@ const HeroWithForm = () => {
     setIsLoading(true);
     
     try {
+      // Check if user is authenticated
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        toast({
+          title: "Authentication Required",
+          description: "Please sign in to submit a loan application.",
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('loan_applications')
         .insert({
+          user_id: user.id,
           full_name: formData.name,
           email: formData.email,
           mobile_number: formData.phone,

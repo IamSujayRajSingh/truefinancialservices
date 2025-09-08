@@ -39,6 +39,7 @@ export type Database = {
           status: Database["public"]["Enums"]["application_status"]
           tenure_months: number | null
           updated_at: string
+          user_id: string | null
           year_of_manufacture: number | null
         }
         Insert: {
@@ -67,6 +68,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["application_status"]
           tenure_months?: number | null
           updated_at?: string
+          user_id?: string | null
           year_of_manufacture?: number | null
         }
         Update: {
@@ -95,6 +97,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["application_status"]
           tenure_months?: number | null
           updated_at?: string
+          user_id?: string | null
           year_of_manufacture?: number | null
         }
         Relationships: []

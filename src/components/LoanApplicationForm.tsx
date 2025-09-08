@@ -197,9 +197,25 @@ const LoanApplicationForm: React.FC<LoanApplicationFormProps> = ({ onSubmitSucce
       let currentApplicationId = applicationId;
 
       if (!currentApplicationId) {
+        // Check if user is authenticated
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (!user) {
+          toast({
+            title: "Authentication Required",
+            description: "Please sign in to submit a loan application.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+
         const { data: newApplication, error: insertError } = await supabase
           .from('loan_applications')
-          .insert(applicationData)
+          .insert({
+            ...applicationData,
+            user_id: user.id
+          })
           .select('id')
           .single();
 
