@@ -9,15 +9,25 @@ import heroImage from "@/assets/hero-car-family.jpg";
 
 interface QuickFormData {
   name: string;
+  email: string;
   phone: string;
+  city: string;
   pincode: string;
+  occupation: string;
+  monthlyIncome: string;
+  desiredLoanAmount: string;
 }
 
 const HeroWithForm = () => {
   const [formData, setFormData] = useState<QuickFormData>({
     name: "",
+    email: "",
     phone: "",
-    pincode: ""
+    city: "",
+    pincode: "",
+    occupation: "",
+    monthlyIncome: "",
+    desiredLoanAmount: ""
   });
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -25,7 +35,7 @@ const HeroWithForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.phone || !formData.pincode) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.city || !formData.pincode || !formData.occupation || !formData.monthlyIncome || !formData.desiredLoanAmount) {
       toast({
         title: "Missing Information",
         description: "Please fill in all fields to continue.",
@@ -41,10 +51,13 @@ const HeroWithForm = () => {
         .from('loan_applications')
         .insert({
           full_name: formData.name,
+          email: formData.email,
           mobile_number: formData.phone,
-          email: '', // Required field, will be updated later in full application
+          city: formData.city,
           pincode: formData.pincode,
-          city: '', // Required field, will be updated later in full application
+          employment_type: 'salaried' as const,
+          monthly_income: parseFloat(formData.monthlyIncome),
+          desired_loan_amount: parseFloat(formData.desiredLoanAmount),
           consent_given: true,
           status: 'new' as const
         });
@@ -57,7 +70,16 @@ const HeroWithForm = () => {
         title: "Success!",
         description: "We'll contact you within 30 minutes with pre-approved offers.",
       });
-      setFormData({ name: "", phone: "", pincode: "" });
+      setFormData({ 
+        name: "", 
+        email: "", 
+        phone: "", 
+        city: "", 
+        pincode: "", 
+        occupation: "", 
+        monthlyIncome: "", 
+        desiredLoanAmount: "" 
+      });
     } catch (error) {
       console.error('Error saving application:', error);
       toast({
@@ -144,6 +166,16 @@ const HeroWithForm = () => {
                   
                   <div className="space-y-2">
                     <Input
+                      placeholder="Email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      className="h-12 rounded-2xl border-white/30"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Input
                       placeholder="Mobile Number"
                       type="tel"
                       value={formData.phone}
@@ -154,9 +186,47 @@ const HeroWithForm = () => {
                   
                   <div className="space-y-2">
                     <Input
+                      placeholder="City"
+                      value={formData.city}
+                      onChange={(e) => handleInputChange("city", e.target.value)}
+                      className="h-12 rounded-2xl border-white/30"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Input
                       placeholder="Pincode"
                       value={formData.pincode}
                       onChange={(e) => handleInputChange("pincode", e.target.value)}
+                      className="h-12 rounded-2xl border-white/30"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Occupation"
+                      value={formData.occupation}
+                      onChange={(e) => handleInputChange("occupation", e.target.value)}
+                      className="h-12 rounded-2xl border-white/30"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Monthly Income"
+                      type="number"
+                      value={formData.monthlyIncome}
+                      onChange={(e) => handleInputChange("monthlyIncome", e.target.value)}
+                      className="h-12 rounded-2xl border-white/30"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Input
+                      placeholder="Desired Loan Amount"
+                      type="number"
+                      value={formData.desiredLoanAmount}
+                      onChange={(e) => handleInputChange("desiredLoanAmount", e.target.value)}
                       className="h-12 rounded-2xl border-white/30"
                     />
                   </div>
