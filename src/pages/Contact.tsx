@@ -203,9 +203,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">Email</h3>
                       <p className="text-muted-foreground mb-2">We'll respond within 24 hours</p>
-                      <a href="mailto:support@tfs.com" className="text-primary hover:underline">
-                        support@tfs.com
-                      </a>
+                      
                     </div>
                   </div>
                 </Card>
