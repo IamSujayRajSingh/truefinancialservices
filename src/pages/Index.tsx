@@ -12,51 +12,52 @@ import sbiLogo from "@/assets/banks/sbi-logo.png";
 import kotakLogo from "@/assets/banks/kotak-logo.png";
 import bajajLogo from "@/assets/banks/bajaj-logo.png";
 import tataCapitalLogo from "@/assets/banks/tata-capital-logo.png";
-
 const Index = () => {
   const [showCreditModal, setShowCreditModal] = useState(false);
-
-  const benefits = [
-    {
-      icon: CheckCircle,
-      title: "Instant Pre-Approval",
-      description: "Get approved in minutes with our AI-powered eligibility check"
-    },
-    {
-      icon: TrendingUp,
-      title: "Low Interest Rates",
-      description: "Competitive rates starting from 10.5% with flexible EMI options"
-    },
-    {
-      icon: Users,
-      title: "Multiple Lenders",
-      description: "Access to 15+ top lenders for the best loan offers"
-    },
-    {
-      icon: Shield,
-      title: "100% Secure",
-      description: "Bank-grade security with complete data protection"
-    }
-  ];
-
-  const lenders = [
-    { name: "HDFC Bank", logo: hdfcLogo },
-    { name: "ICICI Bank", logo: iciciLogo },
-    { name: "SBI", logo: sbiLogo },
-    { name: "Kotak Mahindra", logo: kotakLogo },
-    { name: "Bajaj Finserv", logo: bajajLogo },
-    { name: "Tata Capital", logo: tataCapitalLogo }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const benefits = [{
+    icon: CheckCircle,
+    title: "Instant Pre-Approval",
+    description: "Get approved in minutes with our AI-powered eligibility check"
+  }, {
+    icon: TrendingUp,
+    title: "Low Interest Rates",
+    description: "Competitive rates starting from 10.5% with flexible EMI options"
+  }, {
+    icon: Users,
+    title: "Multiple Lenders",
+    description: "Access to 15+ top lenders for the best loan offers"
+  }, {
+    icon: Shield,
+    title: "100% Secure",
+    description: "Bank-grade security with complete data protection"
+  }];
+  const lenders = [{
+    name: "HDFC Bank",
+    logo: hdfcLogo
+  }, {
+    name: "ICICI Bank",
+    logo: iciciLogo
+  }, {
+    name: "SBI",
+    logo: sbiLogo
+  }, {
+    name: "Kotak Mahindra",
+    logo: kotakLogo
+  }, {
+    name: "Bajaj Finserv",
+    logo: bajajLogo
+  }, {
+    name: "Tata Capital",
+    logo: tataCapitalLogo
+  }];
+  return <div className="min-h-screen">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-12 w-auto" />
-              <span className="text-2xl font-bold text-white">TFS</span>
+              
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -75,17 +76,10 @@ const Index = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <Button
-                onClick={() => setShowCreditModal(true)}
-                variant="outline"
-                className="rounded-2xl border-white/30 text-primary hover:bg-white/10"
-              >
+              <Button onClick={() => setShowCreditModal(true)} variant="outline" className="rounded-2xl border-white/30 text-primary hover:bg-white/10">
                 Credit Score
               </Button>
-              <Button
-                asChild
-                className="rounded-2xl bg-accent hover:bg-accent/90"
-              >
+              <Button asChild className="rounded-2xl bg-accent hover:bg-accent/90">
                 <Link to="/apply">Apply Now</Link>
               </Button>
             </div>
@@ -107,8 +101,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="p-8 text-center space-y-6 shadow-card rounded-3xl hover:shadow-floating transition-all duration-300">
+            {benefits.map((benefit, index) => <Card key={index} className="p-8 text-center space-y-6 shadow-card rounded-3xl hover:shadow-floating transition-all duration-300">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
                   <benefit.icon className="h-8 w-8 text-primary" />
                 </div>
@@ -118,8 +111,7 @@ const Index = () => {
                     {benefit.description}
                   </p>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -138,18 +130,12 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {lenders.map((lender, index) => (
-              <Card key={index} className="p-6 text-center space-y-4 shadow-card rounded-2xl hover:shadow-floating transition-all duration-300">
+            {lenders.map((lender, index) => <Card key={index} className="p-6 text-center space-y-4 shadow-card rounded-2xl hover:shadow-floating transition-all duration-300">
                 <div className="flex items-center justify-center h-16">
-                  <img 
-                    src={lender.logo} 
-                    alt={`${lender.name} logo`} 
-                    className="max-h-12 max-w-full object-contain"
-                  />
+                  <img src={lender.logo} alt={`${lender.name} logo`} className="max-h-12 max-w-full object-contain" />
                 </div>
                 <p className="font-semibold text-muted-foreground text-sm">{lender.name}</p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -165,19 +151,10 @@ const Index = () => {
               Join thousands of satisfied customers who got their dream cars with TFS
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                asChild
-                className="rounded-2xl bg-white text-primary hover:bg-white/90 px-8 py-4"
-              >
+              <Button size="lg" asChild className="rounded-2xl bg-white text-primary hover:bg-white/90 px-8 py-4">
                 <Link to="/apply">Start Application</Link>
               </Button>
-              <Button
-                size="lg"
-                onClick={() => setShowCreditModal(true)}
-                variant="outline"
-                className="rounded-2xl border-white/30 text-primary hover:bg-white/10 px-8 py-4"
-              >
+              <Button size="lg" onClick={() => setShowCreditModal(true)} variant="outline" className="rounded-2xl border-white/30 text-primary hover:bg-white/10 px-8 py-4">
                 Check Credit Score
               </Button>
             </div>
@@ -222,10 +199,7 @@ const Index = () => {
               <div className="space-y-2">
                 <p className="text-white/80">1800-123-4567</p>
                 <p className="text-white/80">support@tfs.com</p>
-                <Button
-                  size="sm"
-                  className="mt-4 rounded-2xl bg-accent hover:bg-accent/90"
-                >
+                <Button size="sm" className="mt-4 rounded-2xl bg-accent hover:bg-accent/90">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp Chat
                 </Button>
@@ -240,20 +214,12 @@ const Index = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <Button
-        size="lg"
-        className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50"
-      >
+      <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
         <MessageCircle className="h-6 w-6" />
       </Button>
 
       {/* Credit Score Modal */}
-      <CreditScoreModal 
-        open={showCreditModal} 
-        onOpenChange={setShowCreditModal} 
-      />
-    </div>
-  );
+      <CreditScoreModal open={showCreditModal} onOpenChange={setShowCreditModal} />
+    </div>;
 };
-
 export default Index;
