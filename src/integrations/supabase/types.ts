@@ -14,7 +14,91 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      loan_applications: {
+        Row: {
+          aadhaar_url: string | null
+          car_make_model: string | null
+          car_value: number | null
+          check_credit_score: boolean | null
+          city: string
+          consent_given: boolean
+          created_at: string
+          credit_score: number | null
+          current_step: number
+          desired_loan_amount: number | null
+          email: string
+          employment_type: Database["public"]["Enums"]["employment_type"] | null
+          full_name: string
+          id: string
+          mobile_number: string
+          monthly_income: number | null
+          pan_card_url: string | null
+          pincode: string
+          rc_url: string | null
+          salary_slip_itr_url: string | null
+          status: Database["public"]["Enums"]["application_status"]
+          tenure_months: number | null
+          updated_at: string
+          year_of_manufacture: number | null
+        }
+        Insert: {
+          aadhaar_url?: string | null
+          car_make_model?: string | null
+          car_value?: number | null
+          check_credit_score?: boolean | null
+          city: string
+          consent_given?: boolean
+          created_at?: string
+          credit_score?: number | null
+          current_step?: number
+          desired_loan_amount?: number | null
+          email: string
+          employment_type?:
+            | Database["public"]["Enums"]["employment_type"]
+            | null
+          full_name: string
+          id?: string
+          mobile_number: string
+          monthly_income?: number | null
+          pan_card_url?: string | null
+          pincode: string
+          rc_url?: string | null
+          salary_slip_itr_url?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          tenure_months?: number | null
+          updated_at?: string
+          year_of_manufacture?: number | null
+        }
+        Update: {
+          aadhaar_url?: string | null
+          car_make_model?: string | null
+          car_value?: number | null
+          check_credit_score?: boolean | null
+          city?: string
+          consent_given?: boolean
+          created_at?: string
+          credit_score?: number | null
+          current_step?: number
+          desired_loan_amount?: number | null
+          email?: string
+          employment_type?:
+            | Database["public"]["Enums"]["employment_type"]
+            | null
+          full_name?: string
+          id?: string
+          mobile_number?: string
+          monthly_income?: number | null
+          pan_card_url?: string | null
+          pincode?: string
+          rc_url?: string | null
+          salary_slip_itr_url?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          tenure_months?: number | null
+          updated_at?: string
+          year_of_manufacture?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +107,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      application_status:
+        | "new"
+        | "in_review"
+        | "approved"
+        | "rejected"
+        | "disbursed"
+      employment_type: "salaried" | "self_employed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +240,15 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      application_status: [
+        "new",
+        "in_review",
+        "approved",
+        "rejected",
+        "disbursed",
+      ],
+      employment_type: ["salaried", "self_employed"],
+    },
   },
 } as const
