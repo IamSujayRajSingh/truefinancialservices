@@ -7,6 +7,12 @@ import CreditScoreModal from "@/components/CreditScoreModal";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import tfsLogo from "@/assets/tfs-logo.png";
+import hdfcLogo from "@/assets/banks/hdfc-logo.png";
+import iciciLogo from "@/assets/banks/icici-logo.png";
+import sbiLogo from "@/assets/banks/sbi-logo.png";
+import kotakLogo from "@/assets/banks/kotak-logo.png";
+import bajajLogo from "@/assets/banks/bajaj-logo.png";
+import tataCapitalLogo from "@/assets/banks/tata-capital-logo.png";
 
 const Index = () => {
   const [showCreditModal, setShowCreditModal] = useState(false);
@@ -35,7 +41,12 @@ const Index = () => {
   ];
 
   const lenders = [
-    "HDFC Bank", "ICICI Bank", "SBI", "Kotak Mahindra", "Bajaj Finserv", "Tata Capital"
+    { name: "HDFC Bank", logo: hdfcLogo },
+    { name: "ICICI Bank", logo: iciciLogo },
+    { name: "SBI", logo: sbiLogo },
+    { name: "Kotak Mahindra", logo: kotakLogo },
+    { name: "Bajaj Finserv", logo: bajajLogo },
+    { name: "Tata Capital", logo: tataCapitalLogo }
   ];
 
   return (
@@ -129,8 +140,15 @@ const Index = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {lenders.map((lender, index) => (
-              <Card key={index} className="p-6 text-center shadow-card rounded-2xl hover:shadow-floating transition-all duration-300">
-                <p className="font-semibold text-muted-foreground">{lender}</p>
+              <Card key={index} className="p-6 text-center space-y-4 shadow-card rounded-2xl hover:shadow-floating transition-all duration-300">
+                <div className="flex items-center justify-center h-16">
+                  <img 
+                    src={lender.logo} 
+                    alt={`${lender.name} logo`} 
+                    className="max-h-12 max-w-full object-contain"
+                  />
+                </div>
+                <p className="font-semibold text-muted-foreground text-sm">{lender.name}</p>
               </Card>
             ))}
           </div>
