@@ -9,9 +9,9 @@
 @layer base {
   :root {
     /* TFS Brand Colors */
-    --trust-blue: 210 67% 29%;
-    --accent-green: 156 52% 40%;
-    --neutral-light: 220 14% 96%;
+    --trust-blue: 210 82% 29%;
+    --accent-green: 151 55% 41%;
+    --neutral-gray: 220 14% 97%;
     --neutral-dark: 215 14% 50%;
     
     /* Semantic Design System */
