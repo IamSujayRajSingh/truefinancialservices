@@ -3,71 +3,54 @@ import { RotateCcw, Plus, ArrowLeftRight, CheckCircle, Shield, Users, ChevronDow
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const Services = () => {
-  const services = [
-    {
-      icon: RotateCcw,
-      title: "Refinance Your Used Car Loan",
-      description: "Lower your EMI or reduce your tenure by refinancing your existing used car loan at better rates. Save on interest and free up cash flow.",
-      cta: "Explore Refinance Options"
-    },
-    {
-      icon: Plus,
-      title: "Top Up on Your Current Loan",
-      description: "Need extra funds? Get additional financing over your existing used car loan with flexible tenure and quick approvals.",
-      cta: "Apply for Top Up Loan"
-    },
-    {
-      icon: ArrowLeftRight,
-      title: "Transfer Your Loan Balance",
-      description: "Switch your used car loan to a new lender offering lower interest rates and better terms. Reduce EMI burden instantly.",
-      cta: "Start Loan Transfer"
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: CheckCircle,
-      title: "Multiple lenders compared instantly",
-      description: "Get the best rates from our network of trusted lenders"
-    },
-    {
-      icon: Shield,
-      title: "Transparent process, no hidden charges",
-      description: "Clear terms and conditions with upfront fee disclosure"
-    },
-    {
-      icon: Users,
-      title: "Dedicated support until disbursement",
-      description: "Personal relationship manager to guide you through the process"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What is a refinance loan?",
-      answer: "A refinance loan allows you to replace your existing used car loan with a new loan at better terms, potentially reducing your EMI or loan tenure while saving on interest costs."
-    },
-    {
-      question: "Can I get a top-up loan if my car loan is less than 1 year old?",
-      answer: "Yes, you can apply for a top-up loan even if your existing car loan is less than 1 year old, subject to lender approval and your repayment track record."
-    },
-    {
-      question: "What charges apply for a balance transfer?",
-      answer: "Balance transfer charges typically include processing fees (0.5-2% of loan amount), legal charges, and stamp duty. We provide transparent fee disclosure upfront with no hidden costs."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-neutral-gray/30">
+  const services = [{
+    icon: RotateCcw,
+    title: "Refinance Your Used Car Loan",
+    description: "Lower your EMI or reduce your tenure by refinancing your existing used car loan at better rates. Save on interest and free up cash flow.",
+    cta: "Explore Refinance Options"
+  }, {
+    icon: Plus,
+    title: "Top Up on Your Current Loan",
+    description: "Need extra funds? Get additional financing over your existing used car loan with flexible tenure and quick approvals.",
+    cta: "Apply for Top Up Loan"
+  }, {
+    icon: ArrowLeftRight,
+    title: "Transfer Your Loan Balance",
+    description: "Switch your used car loan to a new lender offering lower interest rates and better terms. Reduce EMI burden instantly.",
+    cta: "Start Loan Transfer"
+  }];
+  const benefits = [{
+    icon: CheckCircle,
+    title: "Multiple lenders compared instantly",
+    description: "Get the best rates from our network of trusted lenders"
+  }, {
+    icon: Shield,
+    title: "Transparent process, no hidden charges",
+    description: "Clear terms and conditions with upfront fee disclosure"
+  }, {
+    icon: Users,
+    title: "Dedicated support until disbursement",
+    description: "Personal relationship manager to guide you through the process"
+  }];
+  const faqs = [{
+    question: "What is a refinance loan?",
+    answer: "A refinance loan allows you to replace your existing used car loan with a new loan at better terms, potentially reducing your EMI or loan tenure while saving on interest costs."
+  }, {
+    question: "Can I get a top-up loan if my car loan is less than 1 year old?",
+    answer: "Yes, you can apply for a top-up loan even if your existing car loan is less than 1 year old, subject to lender approval and your repayment track record."
+  }, {
+    question: "What charges apply for a balance transfer?",
+    answer: "Balance transfer charges typically include processing fees (0.5-2% of loan amount), legal charges, and stamp duty. We provide transparent fee disclosure upfront with no hidden costs."
+  }];
+  return <div className="min-h-screen bg-neutral-gray/30">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold text-trust-blue">TFS</span>
+              
             </div>
             <Button variant="outline" className="text-trust-blue border-trust-blue hover:bg-trust-blue hover:text-white">
               Talk to an Expert
@@ -79,12 +62,15 @@ const Services = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-trust-blue via-trust-blue/90 to-trust-blue/80 text-white">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Flexible Used Car Finance Services for Every Need
             </h1>
@@ -117,16 +103,19 @@ const Services = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="h-full"
-                >
+            const Icon = service.icon;
+            return <motion.div key={index} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} whileHover={{
+              y: -5
+            }} className="h-full">
                   <Card className="h-full shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl border-0 bg-white">
                     <CardHeader className="text-center pb-4">
                       <div className="mx-auto mb-4 p-3 bg-trust-blue/10 rounded-full w-fit">
@@ -145,9 +134,8 @@ const Services = () => {
                       </Button>
                     </CardContent>
                   </Card>
-                </motion.div>
-              );
-            })}
+                </motion.div>;
+          })}
           </div>
         </div>
       </section>
@@ -166,15 +154,17 @@ const Services = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
-                >
+            const Icon = benefit.icon;
+            return <motion.div key={index} initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} className="text-center">
                   <div className="mx-auto mb-4 p-3 bg-accent-green/10 rounded-full w-fit">
                     <Icon className="h-8 w-8 text-accent-green" />
                   </div>
@@ -184,9 +174,8 @@ const Services = () => {
                   <p className="text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
-                </motion.div>
-              );
-            })}
+                </motion.div>;
+          })}
           </div>
         </div>
       </section>
@@ -205,16 +194,14 @@ const Services = () => {
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl shadow-sm border-0 px-6">
+              {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl shadow-sm border-0 px-6">
                   <AccordionTrigger className="text-left text-trust-blue font-semibold py-6 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 pb-6 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </div>
@@ -223,12 +210,15 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-trust-blue to-trust-blue/90 text-white">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Ready to Restructure Your Used Car Loan?
             </h2>
@@ -254,8 +244,6 @@ const Services = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
