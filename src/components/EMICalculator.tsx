@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { Calculator, TrendingUp, DollarSign } from "lucide-react";
+import { Calculator, TrendingUp, IndianRupee } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface EMIData {
@@ -102,13 +102,13 @@ const EMICalculator = () => {
                       loanAmount: value[0]
                     }))}
                     min={100000}
-                    max={2000000}
+                    max={10000000}
                     step={50000}
                     className="py-4"
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>₹1L</span>
-                    <span>₹20L</span>
+                    <span>₹1Cr</span>
                   </div>
                 </div>
 
@@ -132,13 +132,13 @@ const EMICalculator = () => {
                       interestRate: value[0]
                     }))}
                     min={8}
-                    max={18}
+                    max={20}
                     step={0.1}
                     className="py-4"
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>8%</span>
-                    <span>18%</span>
+                    <span>20%</span>
                   </div>
                 </div>
 
@@ -161,13 +161,13 @@ const EMICalculator = () => {
                       tenure: value[0]
                     }))}
                     min={1}
-                    max={7}
+                    max={25}
                     step={1}
                     className="py-4"
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>1 Year</span>
-                    <span>7 Years</span>
+                    <span>25 Years</span>
                   </div>
                 </div>
 
@@ -190,7 +190,7 @@ const EMICalculator = () => {
                     <p className="text-white/80 text-lg">Monthly EMI</p>
                     <p className="text-4xl font-bold">{formatCurrency(emiData.emi)}</p>
                   </div>
-                  <DollarSign className="h-12 w-12 text-accent" />
+                  <IndianRupee className="h-12 w-12 text-accent" />
                 </div>
               </Card>
 
