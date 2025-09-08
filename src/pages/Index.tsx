@@ -6,7 +6,6 @@ import EMICalculator from "@/components/EMICalculator";
 import CreditScoreModal from "@/components/CreditScoreModal";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import tfsLogo from "@/assets/tfs-logo.png";
 import hdfcLogo from "@/assets/banks/hdfc-logo.png";
 import iciciLogo from "@/assets/banks/icici-logo.png";
 import sbiLogo from "@/assets/banks/sbi-logo.png";
@@ -56,7 +55,7 @@ const Index = () => {
         <nav className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src={tfsLogo} alt="TFS Logo" className="h-12 w-12" />
+              <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-12 w-auto" />
               <span className="text-2xl font-bold text-white">TFS</span>
             </div>
             
@@ -192,7 +191,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <img src={tfsLogo} alt="TFS Logo" className="h-10 w-10" />
+                <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-10 w-auto" />
                 <span className="text-2xl font-bold">TFS</span>
               </div>
               <p className="text-white/80">
