@@ -158,7 +158,7 @@ const PrivacyPolicy = () => {
                       <strong>Data Protection Officer</strong><br />
                       TFS - True Financial Services<br />
                       Email: privacy@tfs.com<br />
-                      Phone: 1800-123-4567
+                      Phone: +91-8505830148
                     </p>
                     <p className="text-muted-foreground">
                       Or visit our <Link to="/contact" className="text-primary hover:underline">contact page</Link> for more ways to reach us.
@@ -214,7 +214,7 @@ const PrivacyPolicy = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">1800-123-4567</p>
+                <p className="text-white/80">+91-8505830148</p>
                 <p className="text-white/80">support@tfs.com</p>
               </div>
             </div>

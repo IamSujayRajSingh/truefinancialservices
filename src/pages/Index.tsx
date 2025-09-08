@@ -196,9 +196,13 @@ const Index = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">1800-123-4567</p>
+                <p className="text-white/80">+91-8505830148</p>
                 <p className="text-white/80">support@tfs.com</p>
-                <Button size="sm" className="mt-4 rounded-2xl bg-accent hover:bg-accent/90">
+                <Button 
+                  size="sm" 
+                  className="mt-4 rounded-2xl bg-accent hover:bg-accent/90"
+                  onClick={() => window.open('https://wa.me/918505830148', '_blank')}
+                >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp Chat
                 </Button>
@@ -213,7 +217,12 @@ const Index = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
+      <Button 
+        size="lg" 
+        className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50"
+        onClick={() => window.open('https://wa.me/918505830148', '_blank')}
+        aria-label="Contact us on WhatsApp"
+      >
         <MessageCircle className="h-6 w-6" />
       </Button>
 

@@ -263,7 +263,7 @@ const About = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">1800-123-4567</p>
+                <p className="text-white/80">+91-8505830148</p>
                 <p className="text-white/80">support@tfs.com</p>
               </div>
             </div>
