@@ -87,7 +87,7 @@ const Services = () => {
                 Check My Eligibility
               </Button>
               <ContactModal>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-trust-blue px-8 py-3 text-lg">
+                <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-trust-blue px-8 py-3 text-lg">
                   Talk to an Expert
                 </Button>
               </ContactModal>
