@@ -3,6 +3,7 @@ import { RotateCcw, Plus, ArrowLeftRight, CheckCircle, Shield, Users, ChevronDow
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
 const Services = () => {
   const services = [{
     icon: RotateCcw,
@@ -49,8 +50,9 @@ const Services = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-8 w-auto" />
-              
+              <Link to="/">
+                <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-8 w-auto" />
+              </Link>
             </div>
             <Button variant="outline" className="text-trust-blue border-trust-blue hover:bg-trust-blue hover:text-white">
               Talk to an Expert
