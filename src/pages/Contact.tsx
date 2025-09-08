@@ -317,7 +317,7 @@ const Contact = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
           <MessageCircle className="h-6 w-6" />
         </Button>
