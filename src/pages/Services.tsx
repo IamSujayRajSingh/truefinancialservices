@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import ContactModal from "@/components/ContactModal";
 const Services = () => {
   const services = [{
     icon: RotateCcw,
@@ -54,9 +55,11 @@ const Services = () => {
                 <img src="/lovable-uploads/df21c149-40ae-4c45-9d69-3c64f729fa04.png" alt="TFS Logo" className="h-8 w-auto" />
               </Link>
             </div>
-            <Button variant="outline" className="text-trust-blue border-trust-blue hover:bg-trust-blue hover:text-white">
-              Talk to an Expert
-            </Button>
+            <ContactModal>
+              <Button variant="outline" className="text-trust-blue border-trust-blue hover:bg-trust-blue hover:text-white">
+                Talk to an Expert
+              </Button>
+            </ContactModal>
           </div>
         </div>
       </nav>
@@ -83,9 +86,11 @@ const Services = () => {
               <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white px-8 py-3 text-lg">
                 Check My Eligibility
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-trust-blue px-8 py-3 text-lg">
-                Talk to an Expert
-              </Button>
+              <ContactModal>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-trust-blue px-8 py-3 text-lg">
+                  Talk to an Expert
+                </Button>
+              </ContactModal>
             </div>
           </motion.div>
         </div>

@@ -199,8 +199,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">Call Us</h3>
                       <p className="text-muted-foreground mb-2">Mon-Sat: 9:00 AM - 6:00 PM</p>
-                      <a href="tel:1800-123-4567" className="text-xl font-semibold text-primary hover:underline">
-                        1800-123-4567
+                      <a href="tel:+91-8505830148" className="text-xl font-semibold text-primary hover:underline">
+                        +91-8505830148
                       </a>
                     </div>
                   </div>
@@ -214,9 +214,11 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">WhatsApp</h3>
                       <p className="text-muted-foreground mb-2">Quick support via chat</p>
-                      <Button variant="outline" className="rounded-2xl border-accent-green text-accent-green hover:bg-accent-green hover:text-white">
-                        Start WhatsApp Chat
-                      </Button>
+                      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" className="rounded-2xl border-accent-green text-accent-green hover:bg-accent-green hover:text-white">
+                          Start WhatsApp Chat
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </Card>
@@ -245,8 +247,8 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-primary mb-2">Office Address</h3>
                       <p className="text-muted-foreground">
                         TFS Corporate Office<br />
-                        123 Business District<br />
-                        Mumbai, Maharashtra 400001<br />
+                        487/104, Peeragarhi<br />
+                        New Delhi<br />
                         India
                       </p>
                     </div>
@@ -302,7 +304,7 @@ const Contact = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">1800-123-4567</p>
+                <p className="text-white/80">+91-8505830148</p>
                 <p className="text-white/80">support@tfs.com</p>
               </div>
             </div>
@@ -315,9 +317,11 @@ const Contact = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
-        <MessageCircle className="h-6 w-6" />
-      </Button>
+      <a href="https://wa.me/918505830148" target="_blank" rel="noopener noreferrer">
+        <Button size="lg" className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50">
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      </a>
     </div>
   );
 };
