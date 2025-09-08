@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Shield, CheckCircle, Clock, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import heroImage from "@/assets/hero-car-family.jpg";
 
 interface QuickFormData {
@@ -35,15 +36,38 @@ const HeroWithForm = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const { error } = await supabase
+        .from('loan_applications')
+        .insert({
+          full_name: formData.name,
+          mobile_number: formData.phone,
+          email: '', // Required field, will be updated later in full application
+          pincode: formData.pincode,
+          city: '', // Required field, will be updated later in full application
+          consent_given: true,
+          status: 'new' as const
+        });
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Success!",
         description: "We'll contact you within 30 minutes with pre-approved offers.",
       });
       setFormData({ name: "", phone: "", pincode: "" });
-    }, 1500);
+    } catch (error) {
+      console.error('Error saving application:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (field: keyof QuickFormData, value: string) => {
