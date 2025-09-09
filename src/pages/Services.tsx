@@ -52,7 +52,7 @@ const Services = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Link to="/">
-                <img src="/lovable-uploads/0bbd6eab-f6d4-4182-9790-fd3a20a21174.png" alt="TFS Logo" className="h-8 w-auto" />
+                <img src="/lovable-uploads/20a40dff-a797-4362-a638-31c13052a65e.png" alt="TFS Logo" className="h-8 w-auto" />
               </Link>
             </div>
             <ContactModal>
@@ -243,7 +243,7 @@ const Services = () => {
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <img src="/lovable-uploads/0bbd6eab-f6d4-4182-9790-fd3a20a21174.png" alt="TFS Logo" className="h-8 w-auto" />
+            <img src="/lovable-uploads/20a40dff-a797-4362-a638-31c13052a65e.png" alt="TFS Logo" className="h-8 w-auto" />
             <span className="text-xl font-bold">TFS</span>
           </div>
           <p className="text-gray-400">

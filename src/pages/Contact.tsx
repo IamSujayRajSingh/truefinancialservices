@@ -56,7 +56,7 @@ const Contact = () => {
         <nav className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-3">
-              <img src="/lovable-uploads/0bbd6eab-f6d4-4182-9790-fd3a20a21174.png" alt="TFS Logo" className="h-12 w-auto" />
+              <img src="/lovable-uploads/20a40dff-a797-4362-a638-31c13052a65e.png" alt="TFS Logo" className="h-12 w-auto" />
             </Link>
             
             <div className="flex items-center space-x-8">
@@ -247,7 +247,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-3">
-                <img src="/lovable-uploads/0bbd6eab-f6d4-4182-9790-fd3a20a21174.png" alt="TFS Logo" className="h-10 w-auto" />
+                <img src="/lovable-uploads/20a40dff-a797-4362-a638-31c13052a65e.png" alt="TFS Logo" className="h-10 w-auto" />
                 <span className="text-2xl font-bold">TFS</span>
               </Link>
               <p className="text-white/80">
