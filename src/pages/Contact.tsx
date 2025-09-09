@@ -173,8 +173,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-primary mb-2">Call Us</h3>
                       <p className="text-muted-foreground mb-2">Mon-Sat: 9:00 AM - 6:00 PM</p>
-                      <a href="tel:+918505830148" className="text-xl font-semibold text-primary hover:underline">
-                        +91-8505830148
+                      <a href="tel:+919999119283" className="text-xl font-semibold text-primary hover:underline">
+                        +91-9999119283
                       </a>
                     </div>
                   </div>
@@ -191,7 +191,7 @@ const Contact = () => {
                       <Button 
                         variant="outline" 
                         className="rounded-2xl border-accent-green text-accent-green hover:bg-accent-green hover:text-white"
-                        onClick={() => window.open('https://wa.me/918505830148', '_blank')}
+                        onClick={() => window.open('https://wa.me/919999119283', '_blank')}
                       >
                         Start WhatsApp Chat
                       </Button>
@@ -275,7 +275,7 @@ const Contact = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Support</h4>
               <div className="space-y-2">
-                <p className="text-white/80">+91-8505830148</p>
+                <p className="text-white/80">+91-9999119283</p>
                 <p className="text-white/80">support@tfs.com</p>
               </div>
             </div>
@@ -291,7 +291,7 @@ const Contact = () => {
       <Button 
         size="lg" 
         className="fixed bottom-6 right-6 rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 shadow-floating z-50"
-        onClick={() => window.open('https://wa.me/918505830148', '_blank')}
+        onClick={() => window.open('https://wa.me/919999119283', '_blank')}
         aria-label="Contact us on WhatsApp"
       >
         <MessageCircle className="h-6 w-6" />

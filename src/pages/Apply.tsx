@@ -124,7 +124,7 @@ const Apply = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
-                    onClick={() => window.open('https://wa.me/918505830148', '_blank')}
+                    onClick={() => window.open('https://wa.me/919999119283', '_blank')}
                     className="flex items-center space-x-2 bg-success hover:bg-success/90"
                     size="lg"
                   >
@@ -132,12 +132,12 @@ const Apply = () => {
                   </Button>
                   
                   <Button
-                    onClick={() => window.open('tel:+918505830148', '_blank')}
+                    onClick={() => window.open('tel:+919999119283', '_blank')}
                     variant="outline"
                     size="lg"
                     className="flex items-center space-x-2"
                   >
-                    <span>Call +91 8505830148</span>
+                    <span>Call +91 9999119283</span>
                   </Button>
                 </div>
               </motion.div>

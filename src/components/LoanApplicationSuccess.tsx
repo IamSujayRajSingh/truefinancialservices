@@ -11,11 +11,11 @@ const LoanApplicationSuccess: React.FC<LoanApplicationSuccessProps> = ({
   onStartNewApplication 
 }) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/918505830148', '_blank');
+    window.open('https://wa.me/919999119283', '_blank');
   };
 
   const handleCallClick = () => {
-    window.open('tel:+918505830148', '_blank');
+    window.open('tel:+919999119283', '_blank');
   };
 
   return (
@@ -99,7 +99,7 @@ const LoanApplicationSuccess: React.FC<LoanApplicationSuccessProps> = ({
                 className="flex items-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call +91 8505830148</span>
+                <span>Call +91 9999119283</span>
               </Button>
             </div>
 
